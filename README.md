@@ -3,12 +3,9 @@
 
 ![Phi Recorder Banner](arts/banner.png)
 
-快 简 轻 便  
-Fast Simple Lightweight Convenient
-
-已建 QQ 群: 907416249
-
 文档 / Documentation: [Docs](https://pr.xhsr.org.cn/)
+
+forked from TeamFlos/phira-render
 
 ## Installation 安装
 
@@ -18,7 +15,7 @@ Check [Releases](https://github.com/AntiLeave/Phi-Recorder/releases)
 
 ```bash
 pnpm install
-cargo tauri build
+pnpm tauri build
 ```
 
 ## 注意事项 / Notice
