@@ -4,7 +4,7 @@ version = "1.6.4"
 description = "Phi Recorder"
 authors = ["HLMC", "Mivik"]
 license = "GPL-3.0-or-later"
-repository = "https://github.com/2278535805/Phi-Recorder"
+repository = "https://github.com/AntiLeave/Phi-Recorder"
 default-run = "phi-recorder"
 edition = "2021"
 rust-version = "1.77.2"
@@ -24,11 +24,11 @@ serde = { version = "1.0.217", features = ["derive"] }
 tauri = { version = "2.11.5", features = [ "protocol-asset", "tray-icon"] }
 
 anyhow = { version = "1.0.95", features = ["backtrace"] }
-macroquad = { git = "https://github.com/2278535805/macroquad", default-features = false }
-phire = { git = "https://github.com/2278535805/phire", package = "phire", default-features = false, features = ["log", "video"] }
+macroquad = { git = "https://github.com/AntiLeave/macroquad", default-features = false }
+phire = { git = "https://github.com/AntiLeave/phire", package = "phire", default-features = false, features = ["log", "video"] }
 # phire = { path = "../../phire/phire", default-features = false, features = ["log", "video"] }
 
-sasa = { git = "https://github.com/2278535805/sasa" }
+sasa = { git = "https://github.com/AntiLeave/sasa" }
 tokio = { version = "1.45.0", features = ["process", "rt-multi-thread", "fs"] }
 tracing = "0.1.37"
 tempfile = "3.16.0"

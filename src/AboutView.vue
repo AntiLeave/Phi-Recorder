@@ -31,7 +31,7 @@ import type { Release, Assets } from './model';
 async function checkForUpdates(dialog = true) {
   checking.value = true;
   try {
-    const response = await fetch('https://api.github.com/repos/2278535805/Phi-Recorder/releases/latest', {
+    const response = await fetch('https://api.github.com/repos/AntiLeave/Phi-Recorder/releases/latest', {
       method: 'GET',
       headers: {
         Accept: 'application/vnd.github+json',
@@ -94,7 +94,7 @@ async function getNewVersion() {
   //dialog_download.value = true;
   
   try {
-    const response = await fetch('https://api.github.com/repos/2278535805/Phi-Recorder/releases/latest', {
+    const response = await fetch('https://api.github.com/repos/AntiLeave/Phi-Recorder/releases/latest', {
       method: 'GET',
       headers: {
         Accept: 'application/vnd.github+json',
@@ -129,7 +129,7 @@ async function getNewVersion() {
     
   } catch (error) {
     console.error('Error fetching tags:', error);
-    await openUrl("https://github.com/2278535805/Phi-Recorder/releases/latest");
+    await openUrl("https://github.com/AntiLeave/Phi-Recorder/releases/latest");
   }
 }
 
@@ -156,7 +156,7 @@ onMounted(() => {
     <div class="about-container container fade-in">
       <h1 class="app-title gradient-text text-glow" v-t="'app'"></h1>
       <h4 class="mt-n2 version-label text-glow">v{{ appVersion }}</h4>
-      <v-btn class="github-btn hover-scale" prepend-icon="mdi-github" @click="openUrl('https://github.com/2278535805/Phi-Recorder/releases')">GitHub</v-btn>
+      <v-btn class="github-btn hover-scale" prepend-icon="mdi-github" @click="openUrl('https://github.com/AntiLeave/Phi-Recorder/releases')">GitHub</v-btn>
       <v-btn class="github-btn hover-scale" prepend-icon="mdi-update" :loading="checking" @click="checkForUpdates">{{ t('check') }}</v-btn>
       <p class="license-text license-text-gradient">Licensed by GPLv3</p>
     </div>

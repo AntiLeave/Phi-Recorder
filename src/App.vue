@@ -226,7 +226,7 @@ async function checkFFmpegFilter() {
 const update = ref(false);
 async function checkForUpdates(dialog = true): Promise<boolean> {
   try {
-    const response = await fetch('https://api.github.com/repos/2278535805/Phi-Recorder/releases/latest', {
+    const response = await fetch('https://api.github.com/repos/AntiLeave/Phi-Recorder/releases/latest', {
       method: 'GET',
       headers: {
         Accept: 'application/vnd.github+json',

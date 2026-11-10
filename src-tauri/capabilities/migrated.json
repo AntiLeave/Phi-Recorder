@@ -22,7 +22,7 @@
       "identifier": "http:default",
       "allow": [
         {
-          "url": "https://api.github.com/repos/2278535805/Phi-Recorder/releases/latest"
+          "url": "https://api.github.com/repos/AntiLeave/Phi-Recorder/releases/latest"
         },
         {
           "url": "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases/latest"
