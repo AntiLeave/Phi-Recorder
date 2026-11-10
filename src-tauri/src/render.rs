@@ -1084,11 +1084,10 @@ pub async fn main(cmd: bool) -> Result<()> {
     let bitrate_control = if config.dynamic_bitrate_control {
         if ffmpeg_encoder == encoder_list[0] && !config.mpeg4 {
             "-cq"
-        } else if ffmpeg_encoder == encoder_list[1]
-            || config.mpeg4
-            || ffmpeg_encoder == encoder_list[3]
-        {
+        } else if ffmpeg_encoder == encoder_list[1] || config.mpeg4 {
             "-q"
+        } else if ffmpeg_encoder.ends_with("_vaapi") {
+            "-qp"
         } else if ffmpeg_encoder == encoder_list[2] {
             "-qp_p"
         } else if ffmpeg_encoder == config.custom_encoder.unwrap_or_default() {
@@ -1168,7 +1167,7 @@ pub async fn main(cmd: bool) -> Result<()> {
     );
 
     let args2 = format!(
-        "-c:a {} -c:v {} -movflags +faststart -pix_fmt yuv420p {} {} -filter_complex {} -map 0:v:0 -map [a] -f {}",
+        "-c:a {} -c:v {} -movflags +faststart -pix_fmt yuv420p {} {}{} -filter_complex {} -map 0:v:0 -map [a] -f {}",
         if config.hires {
             "pcm_f32le"
         } else {
@@ -1177,6 +1176,11 @@ pub async fn main(cmd: bool) -> Result<()> {
         ffmpeg_encoder,
         bitrate_control,
         config.bitrate,
+        if bitrate_control == "-qp" && ffmpeg_encoder.ends_with("_vaapi") {
+            " -rc_mode CQP"
+        } else {
+            ""
+        },
         ffmpeg_audio_filter,
         if config.hires { "mov" } else { "mp4" }
     );
