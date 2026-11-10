@@ -28,7 +28,7 @@
     "axios": "^1.20.0",
     "markdown-it": "^14.3.2",
     "moment": "^2.31.0",
-    "phi-recorder": "file:",
+    "phi-recorder": "link:.",
     "semver": "^7.8.5",
     "vue": "3.5.21",
     "vue-i18n": "11.1.11",

@@ -53,7 +53,7 @@ jobs:
       - name: Sync node version and setup cache
         uses: pnpm/action-setup@v6
         with:
-          version: 11
+          version: 12
           cache: true
 
       - name: Install frontend dependencies
