@@ -12,7 +12,7 @@ Fast Simple Lightweight Convenient
 
 ## Installation 安装
 
-Check [Releases](https://github.com/AntiLeave/phigros-recorder/releases)
+Check [Releases](https://github.com/AntiLeave/Phi-Recorder/releases)
 
 ## build 构建
 
