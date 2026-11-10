@@ -1,6 +1,3 @@
-
-# Phigros Recorder 介绍
-
 ![Phi Recorder Banner](arts/banner.png)
 
 文档 / Documentation: [Docs](https://pr.xhsr.org.cn/)
