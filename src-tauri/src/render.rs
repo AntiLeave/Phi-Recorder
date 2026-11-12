@@ -1167,7 +1167,7 @@ pub async fn main(cmd: bool) -> Result<()> {
     );
 
     let args2 = format!(
-        "-c:a {} -c:v {} -movflags +faststart -pix_fmt yuv420p {} {}{} -filter_complex {} -map 0:v:0 -map [a] -f {}",
+        "-c:a {} -c:v {} -movflags +faststart -pix_fmt yuv420p {} {} -filter_complex {} -map 0:v:0 -map [a] -f {}",
         if config.hires {
             "pcm_f32le"
         } else {
@@ -1176,11 +1176,6 @@ pub async fn main(cmd: bool) -> Result<()> {
         ffmpeg_encoder,
         bitrate_control,
         config.bitrate,
-        if bitrate_control == "-qp" && ffmpeg_encoder.ends_with("_vaapi") {
-            " -rc_mode CQP"
-        } else {
-            ""
-        },
         ffmpeg_audio_filter,
         if config.hires { "mov" } else { "mp4" }
     );
