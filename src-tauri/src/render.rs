@@ -1084,11 +1084,10 @@ pub async fn main(cmd: bool) -> Result<()> {
     let bitrate_control = if config.dynamic_bitrate_control {
         if ffmpeg_encoder == encoder_list[0] && !config.mpeg4 {
             "-cq"
-        } else if ffmpeg_encoder == encoder_list[1]
-            || config.mpeg4
-            || ffmpeg_encoder == encoder_list[3]
-        {
+        } else if ffmpeg_encoder == encoder_list[1] || config.mpeg4 {
             "-q"
+        } else if ffmpeg_encoder.ends_with("_vaapi") {
+            "-qp"
         } else if ffmpeg_encoder == encoder_list[2] {
             "-qp_p"
         } else if ffmpeg_encoder == config.custom_encoder.unwrap_or_default() {
